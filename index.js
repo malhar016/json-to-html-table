@@ -1,10 +1,28 @@
+// Example Json Data
+const input = {
+  name: "malhar",
+  age: 34,
+  address: {
+    street: "Kharadi",
+    city: "Pune",
+  },
+  marks: [
+    { maths: 60, practical: [4, 5, 6] },
+    { physics: 70, practical: [7, 5, 43] },
+    { chemistry: 80, practical: [4.33] },
+  ],
+};
+
 const convertJsonToTable = () => {
   const table = document.querySelector("#dataTable");
   table.innerHTML = "";
-  const data = JSON5.parse(document.querySelector("#jsonData").value);
-  console.log(data);
+  const jsonData = document.querySelector("#jsonData");
+  if (!jsonData.value) {
+    alert("Kindly enter valid json data or use 'Example Json.'");
+    return false;
+  }
+  const data = JSON5.parse(jsonData.value);
   const htmlData = createHtmlTree(data, 0);
-  console.log(htmlData);
   table.insertAdjacentHTML("afterbegin", htmlData);
 };
 
@@ -15,8 +33,14 @@ const resetJsonData = () => {
   jsonData.style.height = "";
 };
 
+const setExampleJsonData = () => {
+  const jsonData = document.querySelector("#jsonData");
+  jsonData.value = JSON5.stringify(input, null, 2);
+  jsonData.style.height = jsonData.scrollHeight + "px";
+};
+
+//TODO: remove old simplified method...
 const getHtmlTree = (data) => {
-  console.log(data);
   if (data === null) {
     return;
   }
@@ -47,7 +71,6 @@ const createHtmlTree = (data, level) => {
         "<table class='dataTable'>" +
         data
           .map((ele, idx) => {
-            console.log(ele, typeof ele);
             return (
               "<tr><th id='rowNumber'>" +
               (idx + 1) +
