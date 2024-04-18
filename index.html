@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J2HT</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <table id="dataTable" class="dataTable">
+    </table>
+    <br/>
+    <br/>
+    <textarea id="jsonData" placeholder="Enter Json Object" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
+    <br/>
+    <br/>
+    <button id="convertBtn" onclick="convertJsonToTable()">Convert</button>
+    <button id="resetBtn" onclick="resetJsonData()">Reset</button>
+</body>
+<script src="https://unpkg.com/json5@2/dist/index.min.js"></script>
+<script src="./index.js"></script>
+</html>

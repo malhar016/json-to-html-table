@@ -1,0 +1,66 @@
+.dataTable {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  min-width: 300px;
+  padding: 8px;
+}
+
+.dataTable td,
+.dataTable th {
+  border: 1px solid #ddd;
+  padding: 6px;
+}
+
+.dataTable tr:nth-child(even) {
+  background-color: #eff3f8;
+}
+
+.dataTable tr:hover {
+  background-color: #ddd;
+}
+
+.dataTable th {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: left;
+  background-color: #8b93dc;
+  color: white;
+}
+
+#rowNumber {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: left;
+  background-color: #67b7da;
+  color: white;
+}
+
+button {
+  background-color: #008cba; /* Blue */
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+textarea {
+    width: 100%;
+    min-height: 150px;
+    padding: 8px 10px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+  }
